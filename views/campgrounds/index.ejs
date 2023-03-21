@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<% layout('layouts/boilerplate') %>
-
+<%- include('../layouts/header') %>
     <h1 class="title">All Campgrounds</h1>
     <ul>
         <% for( let campground of campgrounds ) { %>
             <li><a href="/campgrounds/<%= campground._id %>"><%= campground.title %></a></li>
             <% } %>
     </ul>
+    <%- include('../layouts/footer') %>
