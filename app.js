@@ -4,8 +4,9 @@ const path = require('path');
 const mongoose = require('mongoose');
 const Campground = require('./models/campground');
 const methodOverride = require('method-override');
+const ejsMate = require('ejs-mate');
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp') 
+mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'CONNECTION ERROR:'));
@@ -13,6 +14,7 @@ db.once('open', () => {
     console.log('DATABASE CONNECTED')
 })
 
+app.engine('ejs', ejsMate);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/style'));
