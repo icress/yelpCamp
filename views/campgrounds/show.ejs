@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../layouts/header') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YelpCamp</title>
-    <link rel="stylesheet" href="../../style/styles.css">
-</head>
-
-<body>
-    <h1 class="title">
-        <%= camp.title %>
-    </h1>
-    <h2>
-        <%= camp.location %>
-    </h2>
-
-    <p>
-        <a href="/campgrounds/<%= camp._id %>/edit">Edit campground</a>
-    </p>
-
-    <form action="/campground/<%= camp._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-
-    <p>
-        <a href="/campgrounds">All campgrounds</a>
-    </p>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mb-3">
+                <img src="<%= camp.image %>" class="card-img-top" alt="camp-pic">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= camp.title %>
+                    </h5>
+                    <p class="card-text">
+                        <%= camp.description %>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <%= camp.location %>
+                    </li>
+                    <li class="list-group-item">$<%= camp.price %>/night</li>
+                </ul>
+                <div class="card-body">
+                    <a class="card-link btn btn-info" href="/campgrounds/<%= camp._id %>/edit">Edit campground</a>
+                    <form class="d-inline" action="/campground/<%= camp._id %>?_method=DELETE" method="POST">
+                        <button class="card-link btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <%- include('../layouts/footer') %>

@@ -19,17 +19,19 @@ app.use(express.static(__dirname + '/style'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'))
 
+let year = new Date().getFullYear()
+
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home', {year})
 })
 
 app.get('/campgrounds', async (req, res) => {
     const campgrounds = await Campground.find({});
-    res.render('campgrounds/index', {campgrounds})
+    res.render('campgrounds/index', {campgrounds, year})
 })
 
 app.get('/campgrounds/new', (req, res) => {
-    res.render('campgrounds/new')
+    res.render('campgrounds/new', {year})
 })
 
 app.post('/campgrounds', async (req, res) => {
@@ -40,12 +42,12 @@ app.post('/campgrounds', async (req, res) => {
 
 app.get('/campgrounds/:id', async (req, res) => {
     const camp = await Campground.findById(req.params.id);
-    res.render('campgrounds/show', {camp})
+    res.render('campgrounds/show', {camp, year})
 })
 
 app.get('/campgrounds/:id/edit', async (req, res) => {
     const camp = await Campground.findById(req.params.id)
-    res.render('campgrounds/edit', {camp})
+    res.render('campgrounds/edit', {camp, year})
 })
 
 app.put('/campgrounds/:id', async (req, res) => {
