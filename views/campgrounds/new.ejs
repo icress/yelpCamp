@@ -1,36 +1,41 @@
 <%- include('../layouts/header') %>
+
     <div class="row">
         <h1 class="title text-center">Add a Campground</h1>
         <div class="col-6 offset-3">
-            <form class="form" action="/campgrounds" method="POST">
+            <form class="form validated-form" action="/campgrounds" method="POST" novalidate>
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
-                    <input class="form-control" type="text" name="campground[title]" id="title">
+                    <input class="form-control" type="text" name="campground[title]" id="title" required>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="location">Location</label>
-                    <input class="form-control" type="text" name="campground[location]" id="location">
+                    <input class="form-control" type="text" name="campground[location]" id="location" required>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="price">Campground Price</label>
                     <div class="input-group">
                         <span class="input-group-text" id="price-label">$</span>
-                        <input type="text" name="campground[price]" id="price" class="form-control" aria-describedby="price-label" placeholder="0.00">
+                        <input type="text" name="campground[price]" id="price" class="form-control"
+                            aria-describedby="price-label" placeholder="0.00" required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="image">Image URL</label>
-                    <input class="form-control" type="text" name="campground[image]" id="image">
+                    <input class="form-control" type="text" name="campground[image]" id="image" required>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="description">Description</label>
-                    <textarea class="form-control" type="text" name="campground[description]" id="description"></textarea>
+                    <textarea class="form-control" type="text" name="campground[description]" id="description"
+                        required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
                 <button class="btn btn-success">Add Campground</button>
             </form>
         </div>
-
     </div>
-
 
     <%- include('../layouts/footer') %>

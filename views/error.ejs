@@ -1,0 +1,19 @@
+<%- include('layouts/header') %>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">
+                    <%= err.message %>
+                </h4>
+                <p>Oh no! It seems that something has gone wrong! Please check the error message and try not to let it
+                    happen again!</p>
+                <hr>
+                <p class="mb-0">
+                    Status code: <%= err.statusCode %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <%- include('layouts/footer') %>

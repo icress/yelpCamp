@@ -6,10 +6,12 @@
             <div class="mb-3">
                 <label class="form-label" for="title">Title</label>
                 <input class="form-control" type="text" name="campground[title]" id="title" value="<%= camp.title %>">
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="location">Location</label>
                 <input class="form-control" type="text" name="campground[location]" id="location" value="<%= camp.location %>">
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="price">Campground Price</label>
@@ -21,15 +23,16 @@
             <div class="mb-3">
                 <label class="form-label" for="image">Image URL</label>
                 <input class="form-control" type="text" name="campground[image]" id="image" value="<%= camp.image %>">
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="description">Description</label>
                 <textarea class="form-control" type="text" name="campground[description]" id="description"><%= camp.description %></textarea>
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <button class="btn btn-info">Update Campground</button>
         </form>
     </div>
-
 </div>
     
     <%- include('../layouts/footer') %>
