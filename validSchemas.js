@@ -10,4 +10,12 @@ const validCampSchema = Joi.object({
     }).required()
 });
 
+const validReviewSchema = Joi.object({
+    review: Joi.object({
+        body: Joi.string().required(),
+        rating: Joi.number().required().min(1).max(5)
+    }).required()
+})
+
 module.exports.validCampSchema = validCampSchema
+module.exports.validReviewSchema = validReviewSchema

@@ -1,7 +1,7 @@
 <%- include('../layouts/header') %>
 
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-6">
             <div class="card mb-3">
                 <img src="<%= camp.image %>" class="card-img-top" alt="camp-pic">
                 <div class="card-body">
@@ -25,18 +25,38 @@
                     </form>
                 </div>
             </div>
-            <h2>Leave a Review</h2>
-            <form class="mb-3 validated-form" action="/campgrounds/<%= camp._id %>/reviews" method="POST" novalidate>
-                <div class="mb-3">
-                    <label class="form-label" for="rating">Rating</label>
-                    <input class="form-range" type="range" name="review[rating]" id="rating" min="1" max="5">
-                    <label class="form-label" for="body">Review</label>
-                    <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
-                    <div class="invalid-feedback">Please put something for your review.</div>
+        </div>
+        <div class="col-6">
+            <% for( review of camp.reviews) { %>
+                <div class="mb-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Rating: <%= review.rating %>/5
+                        </h5>
+                        <p class="card-text">
+                            <%= review.body %>
+                        </p>
+                        <form action="/campgrounds/<%= camp._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </div>
-                <button class="btn btn-success">Submit</button>
-            </form>
+
+                <% } %>
+                    <h2>Leave a Review</h2>
+                    <form class="mb-3 validated-form" action="/campgrounds/<%= camp._id %>/reviews" method="POST"
+                        novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="rating">Rating</label>
+                            <input class="form-range" type="range" name="review[rating]" id="rating" min="1" max="5">
+                            <label class="form-label" for="body">Review</label>
+                            <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3"
+                                required></textarea>
+                            <div class="invalid-feedback">Please put something for your review.</div>
+                        </div>
+                        <button class="btn btn-success">Submit</button>
+                    </form>
         </div>
     </div>
 
-<%- include('../layouts/footer') %>
+    <%- include('../layouts/footer') %>
