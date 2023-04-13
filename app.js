@@ -50,10 +50,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+let year = new Date().getFullYear();
 
 app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error')
+    res.locals.year = year;
     next();
 })
 
@@ -61,7 +64,6 @@ app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/reviews', reviewRoutes);
 app.use('/' , userRoutes);
 
-let year = new Date().getFullYear();
 
 app.get('/', (req, res) => {
     res.render('home', {year})
