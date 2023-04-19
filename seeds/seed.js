@@ -21,6 +21,7 @@ const seedDB = async () => {
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(features)}`,
             price: price,
+            author: "64320b66f1464eaf31acb3c4",
             image: 'https://source.unsplash.com/random/?camping',
             description: 'Lorem ipsum dolor sit amet consectetur adipiscli non ansondro pouleter set belistret'
         })
