@@ -10,6 +10,7 @@ module.exports.createReview = async (req, res) => {
     await camp.save();
     req.flash('success', 'Created new review!')
     res.redirect(`/campgrounds/${camp._id}`)
+    console.log('review created')
 };
 
 module.exports.deleteReview = async (req, res) => {

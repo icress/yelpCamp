@@ -1,4 +1,5 @@
 <%- include('../layouts/header') %>
+    <link rel="stylesheet" href="/stylesheets/stars.css">
 
     <div class="row  m-3">
         <div class="col-6">
@@ -38,8 +39,26 @@
                 <form class="mb-3 validated-form" action="/campgrounds/<%= camp._id %>/reviews" method="POST"
                     novalidate>
                     <div class="mb-3">
-                        <label class="form-label" for="rating">Rating</label>
-                        <input class="form-range" type="range" name="review[rating]" id="rating" min="1" max="5">
+                        <fieldset class="starability-grow">
+                            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+                      
+                            <input type="radio" id="rate1" name="review[rating]" value="1" />
+                            <label for="rate1">1 star.</label>
+                      
+                            <input type="radio" id="rate2" name="review[rating]" value="2" />
+                            <label for="rate2">2 stars.</label>
+                      
+                            <input type="radio" id="rate3" name="review[rating]" value="3" />
+                            <label for="rate3">3 stars.</label>
+                      
+                            <input type="radio" id="rate4" name="review[rating]" value="4" />
+                            <label for="rate4">4 stars.</label>
+                      
+                            <input type="radio" id="rate5" name="review[rating]" value="5" />
+                            <label for="rate5">5 stars.</label>
+                      
+                            <span class="starability-focus-ring"></span>
+                          </fieldset>
                         <label class="form-label" for="body">Review</label>
                         <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3"
                             required></textarea>
@@ -51,11 +70,12 @@
                     <% for( review of camp.reviews) { %>
                         <div class="mb-3 card">
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    Rating: <%= review.rating %>/5
+                                <h5 class="card-title text-muted">
+                                    <%= review.author.username %>
+                                    <p class="starability-result" data-rating=<%=review.rating %>>
+                                        Rated: <%= review.rating %> stars
+                                    </p>
                                 </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username %>
-                                </h6>
                                 <p class="card-text">
                                     <%= review.body %>
                                 </p>
