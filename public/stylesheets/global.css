@@ -1,0 +1,15 @@
+input#username {
+    max-width: 350px;
+}
+
+input#password {
+    max-width: 350px;
+}
+
+input#email {
+    max-width: 350px;
+}
+
+.form-container {
+    content: center;
+}
