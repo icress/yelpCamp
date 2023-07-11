@@ -13,14 +13,14 @@ describe('insert', () => {
         await mongoose.connection.close();
     });
 
-    test('Should add user to db', async () => {
-        const users = db.collection('users');
+    test('Should add campground to db', async () => {
+        const camps = db.collection('campgrounds');
 
-        const mockUser = {_id: 'some-user-id', name: 'John'};
-        await users.insertOne(mockUser);
+        const mockCamp = {_id: 'some-camp-id', name: 'Redfish lake'};
+        await camps.insertOne(mockCamp);
 
-        const insertedUser = await users.findOne({_id: 'some-user-id'});
-        expect(insertedUser).toEqual(mockUser);
+        const insertedCamp = await camps.findOne({_id: 'some-camp-id'});
+        expect(insertedCamp).toEqual(mockCamp);
     });
 });
 
@@ -35,10 +35,10 @@ describe('delete', () => {
         await mongoose.connection.close();
     });
 
-    test('Delete user from db', async () => {
-        const users = db.collection('users');
-        await users.deleteOne({_id: 'some-user-id'})
-        const noOne = await users.findOne({_id: 'some-user-id'})
-        expect(noOne).toEqual(null)
+    test('Delete campground from db', async () => {
+        const camps = db.collection('campgrounds');
+        await camps.deleteOne({_id: 'some-camp-id'})
+        const noWhere = await camps.findOne({_id: 'some-camp-id'})
+        expect(noWhere).toEqual(null)
     });
 });
