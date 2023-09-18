@@ -8,7 +8,7 @@ const validCampSchema = Joi.object({
         location: Joi.string().required(),
         description: Joi.string().required()
     }).required(),
-    deleteImages: Joi.array
+    deleteImages: Joi.array()
 });
 
 const validReviewSchema = Joi.object({
