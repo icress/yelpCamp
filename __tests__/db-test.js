@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-describe('insert', () => {
+describe('Insert', () => {
     let connection;
     let db;
 
@@ -24,7 +24,7 @@ describe('insert', () => {
     });
 });
 
-describe('delete', () => {
+describe('Delete', () => {
     
     beforeAll(async () => {
         connection = await mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
@@ -43,7 +43,7 @@ describe('delete', () => {
     });
 });
 
-describe('insert', () => {
+describe('Insert', () => {
     let connection;
     let db;
 
@@ -67,7 +67,7 @@ describe('insert', () => {
     });
 });
 
-describe('delete', () => {
+describe('Delete', () => {
     
     beforeAll(async () => {
         connection = await mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
@@ -86,7 +86,7 @@ describe('delete', () => {
     });
 });
 
-describe('insert', () => {
+describe('Insert', () => {
     let connection;
     let db;
 
@@ -110,7 +110,7 @@ describe('insert', () => {
     });
 });
 
-describe('delete', () => {
+describe('Delete', () => {
     
     beforeAll(async () => {
         connection = await mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
