@@ -9037,3 +9037,35 @@ module.exports.cities = [
         state: "Florida",
     },
 ];
+
+module.exports.imageSeed = [
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063827/YelpCamp/bhqtgczcmkrhdkgkgz3d.jpg',
+        filename: 'YelpCamp/bhqtgczcmkrhdkgkgz3d'
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063828/YelpCamp/tzkgvlxc2pbkc5upnolt.jpg',
+        filename: 'YelpCamp/tzkgvlxc2pbkc5upnolt'
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063825/YelpCamp/iepbmhujxtvsbiqvy07r.jpg',
+        filename: 'YelpCamp/iepbmhujxtvsbiqvy07r'
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063822/YelpCamp/bnd8gpaii24hhcnzgqzn.jpg',
+        filename: 'YelpCamp/bnd8gpaii24hhcnzgqzn'
+    },
+    {
+       url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063822/YelpCamp/tfg306gqsgzo0mlar7hq.jpg',
+       filename: 'YelpCamp/tfg306gqsgzo0mlar7hq' 
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695065689/YelpCamp/rdfnclyeqhmnopaqsavu.jpg',
+        filename: 'YelpCamp/rdfnclyeqhmnopaqsavu'
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063821/YelpCamp/wirru0gmeeuvhy9nfivk.jpg',
+        filename: 'YelpCamp/wirru0gmeeuvhy9nfivk'
+    }
+    
+]
