@@ -9066,6 +9066,13 @@ module.exports.imageSeed = [
     {
         url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695063821/YelpCamp/wirru0gmeeuvhy9nfivk.jpg',
         filename: 'YelpCamp/wirru0gmeeuvhy9nfivk'
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695068941/YelpCamp/ijdzfquppt5ic4r0aede.jpg',
+        filename: 'YelpCamp/ijdzfquppt5ic4r0aede'
+    },
+    {
+        url: 'https://res.cloudinary.com/dbsv6hgk8/image/upload/v1695069042/YelpCamp/flvfxvb2iitxawhkl49w.jpg',
+        filename: 'YelpCamp/flvfxvb2iitxawhkl49w'
     }
-    
 ]
