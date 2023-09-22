@@ -18,7 +18,8 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const userRoutes = require('./routes/users')
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
+// mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
+mongoose.connect(process.env.DB_URL)
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'CONNECTION ERROR:'));
