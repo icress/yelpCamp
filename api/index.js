@@ -18,11 +18,11 @@ const campgroundRoutes = require('../routes/campgrounds');
 const reviewRoutes = require('../routes/reviews');
 const userRoutes = require('../routes/users')
 
-// mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
+mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-});
+// mongoose.connect(process.env.MONGODB_URI, {
+//     useNewUrlParser: true,
+// });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'CONNECTION ERROR:'));
@@ -33,10 +33,10 @@ db.once('open', () => {
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/style'));
+// app.use(express.static(__dirname + '/style'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 const sessionConfig = {
     secret: process.env.SECRET_KEY,
     resave: false,
