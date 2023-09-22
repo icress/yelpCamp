@@ -23,7 +23,9 @@ if (!process.env.DB_URL) {
     throw new Error('MongoDB Atlas does not seem to be connected!')
 }
 
-mongoose.connect(process.env.DB_URL)
+mongoose.connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'CONNECTION ERROR:'));
