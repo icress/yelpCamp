@@ -27,7 +27,7 @@ db.once('open', () => {
     console.log('DATABASE CONNECTED')
 });
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/style'));
