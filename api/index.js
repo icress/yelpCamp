@@ -19,6 +19,10 @@ const reviewRoutes = require('../routes/reviews');
 const userRoutes = require('../routes/users')
 
 // mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
+if (!process.env.DB_URL) {
+    throw new Error('MongoDB Atlas does not seem to be connected!')
+}
+
 mongoose.connect(process.env.DB_URL)
 
 const db = mongoose.connection;
