@@ -1,5 +1,5 @@
 const Campground = require('../models/campground');
-const {cloudinary} = require('../cloudinary');
+const {cloudinary} = require('../api/cloudinary');
 
 module.exports.index = async (req, res) => {
     const campgrounds = await Campground.find({});

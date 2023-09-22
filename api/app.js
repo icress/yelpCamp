@@ -11,12 +11,12 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const ExpressError = require('./utils/ExpressError');
-const User = require('./models/user');
+const ExpressError = require('../utils/ExpressError');
+const User = require('../models/user');
 
-const campgroundRoutes = require('./routes/campgrounds');
-const reviewRoutes = require('./routes/reviews');
-const userRoutes = require('./routes/users')
+const campgroundRoutes = require('../routes/campgrounds');
+const reviewRoutes = require('../routes/reviews');
+const userRoutes = require('../routes/users')
 
 // mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
 mongoose.connect(process.env.DB_URL)

@@ -1,6 +1,6 @@
-const ExpressError = require('./utils/ExpressError');
-const Campground = require('./models/campground');
-const Review = require('./models/review');
+const ExpressError = require('../utils/ExpressError');
+const Campground = require('../models/campground');
+const Review = require('../models/review');
 const {validCampSchema} = require('./validSchemas');
 const {validReviewSchema} = require('./validSchemas');
 

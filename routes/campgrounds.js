@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
-const { isLoggedIn, isAuthor, validateCamp } = require('../middleware');
+const { isLoggedIn, isAuthor, validateCamp } = require('../api/middleware');
 const camps = require('../controllers/camps');
 const multer  = require('multer');
-const {storage} = require('../cloudinary');
+const {storage} = require('../api/cloudinary');
 const upload = multer({storage});
 
 router.route('/')

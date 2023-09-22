@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
-const { isLoggedIn } = require('../middleware');
+const { isLoggedIn } = require('../api/middleware');
 const users = require('../controllers/users');
 
 router.route('/register')
