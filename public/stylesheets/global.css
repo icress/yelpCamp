@@ -23,6 +23,10 @@ input#email {
     width: 100vw;
 }
 
-.title {
+.home-title {
     margin-top: 30vh;
+}
+
+.title {
+    margin-top: 3%;
 }
