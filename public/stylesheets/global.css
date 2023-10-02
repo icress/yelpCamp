@@ -12,6 +12,7 @@ input#email {
 
 .form-container {
     content: center;
+    max-width: 350px;
 }
 
 .home-container {
