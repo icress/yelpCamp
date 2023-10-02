@@ -31,3 +31,7 @@ input#email {
 .title {
     margin-top: 3%;
 }
+
+.alert {
+    text-align: center;
+}
